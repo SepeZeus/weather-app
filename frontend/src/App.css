@@ -1,0 +1,347 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  padding: 2rem !important;
+  text-align: center !important;
+}
+
+body {
+  background-image: linear-gradient(
+    to top left,
+    rgb(29, 47, 127),
+    rgb(123, 185, 255)
+  );
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* Allow scrolling */
+
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.weatherTable {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.weather-icon {
+  margin: auto;
+  width: 4rem;
+  filter: drop-shadow(2px 5px 1px #31313144);
+}
+.raindrop {
+  width: 24px;
+  object-fit: contain;
+  filter: drop-shadow(1px 3px 1px #31313144);
+}
+.rain-chance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.weatherItems-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  flex-wrap: wrap;
+}
+.weatherItems {
+  /* border:3px solid rgb(3, 37, 105); */
+  padding: 4px;
+  font-size: 18px;
+  color: rgb(231 229 228);
+  min-width: 110px;
+  border-radius: 6px;
+  margin: 2px;
+  /* background-color:rgb(42, 91, 183); */
+  background-image: linear-gradient(
+    to bottom left,
+    rgba(77, 109, 255, 0.9),
+    rgba(28, 67, 150, 0.91)
+  );
+  filter: drop-shadow(2px 5px 3px #31313144);
+}
+
+.content-container {
+  position: fixed !important;
+  width: 100vh !important;
+  height: 95vh !important;
+  overflow-y: auto; /* Enable vertical scrolling */
+  transform: translate(-50%, -50%) !important;
+  /* background-color: rgba(43, 58, 122, 0.9) !important; */
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(51, 67, 142, 0.9),
+    rgba(46, 85, 169, 0.91)
+  );
+  padding: 20px !important;
+  border-radius: 10px !important;
+  z-index: 1 !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  filter: drop-shadow(0px 5px 16px #1f1f1f73);
+  scrollbar-width: none;
+}
+
+.content {
+  margin-top: 20px !important;
+  text-align: center !important;
+}
+
+#current-temperature {
+  text-align: center;
+  font-weight: 600;
+  font-size: 48px;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(111, 156, 255),
+    rgb(255, 251, 202)
+  );
+  filter: drop-shadow(2px 12px 6px #1f1f1f73);
+  border-radius: 50% !important;
+  position: relative !important;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  width: 300px !important;
+  height: 300px !important;
+}
+
+.location-container {
+  display: flex !important;
+  background-color: cadetblue !important;
+  width: 40%;
+  height: 12%;
+  min-width: 219.2px;
+  position: relative !important;
+  margin: auto !important;
+  box-sizing: border-box !important;
+  padding: auto !important;
+  border: 3px !important;
+  border-radius: 10px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  background-image: url(assets/unsettled-weather-jim-lorriman.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.btn-add {
+  font-family: sans-serif !important;
+  border: 2px solid rgba(250, 250, 250, 0.5) !important;
+  width: 30px !important;
+  height: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 16px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  margin-right: 0px !important;
+  background-color: transparent !important;
+  color: white !important;
+  margin-left: 34px !important;
+  cursor: pointer !important;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3), 1px -1px 0 rgba(0, 0, 0, 0.3),
+    -1px 1px 0 rgba(0, 0, 0, 0.3), 1px 1px 0 rgba(0, 0, 0, 0.3) !important;
+}
+
+.btn-add::after {
+  content: "+" !important;
+  font-size: 25px !important;
+}
+
+.btn-add:hover {
+  border-color: rgba(250, 250, 250, 0.5) !important;
+  cursor: pointer !important;
+}
+
+.button-dots {
+  position: relative !important;
+  width: 30px !important;
+  height: 30px !important;
+  margin-left: auto !important;
+  margin-right: 24px !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  font-size: 22px !important;
+  color: white !important;
+  cursor: pointer !important;
+  outline: none !important;
+  justify-content: center !important;
+  display: flex !important;
+  align-items: center !important;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3), 1px -1px 0 rgba(0, 0, 0, 0.3),
+    -1px 1px 0 rgba(0, 0, 0, 0.3), 1px 1px 0 rgba(0, 0, 0, 0.3) !important;
+  border: 2px solid rgba(250, 250, 250, 0) !important;
+}
+
+.button-dots span {
+  line-height: 0 !important;
+}
+
+.current-location {
+  box-sizing: border-box;
+  font-family: sans-serif !important;
+  font-size: 48px;
+  color: rgba(255, 255, 255, 0.85) !important;
+  position: relative !important;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5), 1px -1px 0 rgba(0, 0, 0, 0.5),
+    -1px 1px 0 rgba(0, 0, 0, 0.5), 1px 1px 0 rgba(0, 0, 0, 0.5) !important;
+  text-align: center !important;
+  flex-grow: 1 !important;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.modal-title {
+  text-align: center !important;
+  background-color: rgba(255, 255, 255, 0.85);
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.dropdown-toggle:after {
+  border: none !important;
+}
+
+.weatherChart {
+  margin: auto;
+  position: relative;
+  min-height: 90%;
+  height: 50vh;
+  width: 100%;
+}
+
+.weatherChart canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #646cffaa;
+  z-index: 10;
+  margin-bottom: 50px;
+  filter: drop-shadow(3px 3px 5px #2d2d34);
+}
+
+.nav-item a {
+  color: white !important;
+  font-size: 20px;
+}
+.nav-item a:hover {
+  text-decoration: underline; /* Adds underline on hover */
+}
+.nav-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.nav-item:last-child {
+  margin-left: auto;
+  padding-right: 50px;
+}
+
+.nav-item button {
+  /* Remove all styles related to buttons */
+  background-color: inherit; /* Inherit background color from parent */
+  border: none; /* Remove button borders */
+  border-radius: 0; /* Remove button rounded corners */
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  cursor: pointer; /* Indicate hoverability */
+}
+
+.nav-item a:hover {
+  color: pink !important;
+}
+
+.tos-p {
+  color: white;
+}
+.tos-container {
+  /* Adjust these styles as needed */
+  max-width: 800px;
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 2rem; /* Add some padding for readability */
+  font-family: sans-serif; /* Choose a clean font */
+  line-height: 1.5; /* Adjust line spacing for better readability */
+}
+
+.tos-container h1 {
+  color: white;
+  font-size: 1.5rem; /* Adjust heading size */
+  margin-bottom: 1rem; /* Add some space after the heading */
+}
+
+.tos-container h2 {
+  color: white;
+  font-size: 1.2rem; /* Slightly smaller heading size */
+  margin-bottom: 0.5rem; /* Less space after section headings */
+}
+
+.tos-container .disclaimer {
+  color: white;
+  font-style: italic; /* Italicize disclaimer text */
+}
+
+.footer-p a {
+  font-size: 15px !important;
+  color: white !important;
+}
+.footer-p a:hover {
+  color: pink !important;
+  text-decoration: underline; /* Adds underline on hover */
+}
